@@ -1,0 +1,74 @@
+<%inherit file="base.html" />
+<%page expression_filter="h"/>
+<%!
+from markupsafe import Markup
+
+def escape_html(text):
+    return text.replace('\n', Markup('<br />'))
+%>
+
+<%block name="title">
+    Django Mako Demo
+</%block>
+
+<%block name="body_content">
+    <div class="grid-row-header grid-headers">
+        <div class="table-headers">
+            % for key in sorted(headers.keys()):
+                <%
+                    header = headers.get(key)
+                %>
+                <div class="title-cells">
+                    <span class="header-title" style="color:${header.get('font_color', 'black')}">${header.get('title')|escape_html}</span>
+                    <span class="header-sub-title">${header.get('sub_title')}</span>
+                </div>
+            % endfor
+        </div>
+    </div>
+
+        % if drop_down:
+        <div class="grid-rows">
+        % for row_key in sorted(drop_down.keys()):
+            <%
+                current_row = drop_down.get(row_key)
+                row_header = current_row.get('row_header')
+                columns = current_row.get('columns')
+            %>
+        <div class="grid-row">
+            <div class="row-headers">
+                <div class="title-cells">
+                    <span class="row-title" style="color:${row_header.get('font_color', 'black')}">${row_header.get('title')|escape_html}</span>
+                    <span class="row-sub-title">${row_header.get('sub_title')|escape_html}</span>
+                </div>
+                % for col_key in sorted(columns.keys()):
+                    <%
+                        current_col = columns.get(col_key)
+                        column_choices = current_col.get('choices')
+                    %>
+                    <div class="cell-drop-down">
+                        <div class="cell-select">
+                            <span class="select-label">${select_instruction or "Select the Correct Answer"}</span>
+                            <div>
+                                <select id="${row_key}-${col_key}" class="form-control cell-select-element">
+                                    <option value="" selected disabled hidden></option>
+                                    % for choice_key in sorted(column_choices.keys()):
+                                        <%
+                                            current_choice = column_choices.get(choice_key)
+                                        %>
+                                        <option id="${row_key}-${col_key}-${choice_key}" value="${choice_key}">${current_choice.get('text')}</option>
+                                    % endfor
+                                </select>
+                            </div>
+                        </div>
+                        <div class="cell-feedback">
+                            <span class="feedback-title"></span>
+                            <span class="feedback-sub-title"></span>
+                        </div>
+                    </div>
+                % endfor
+            </div>
+        </div>
+        % endfor
+    </div>
+    % endif
+</%block>

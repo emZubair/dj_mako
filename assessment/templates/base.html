@@ -1,0 +1,31 @@
+<%page expression_filter="h"/>
+<%
+from markupsafe import Markup
+from django.contrib.staticfiles.storage import staticfiles_storage
+
+def escape_html(text):
+    return text.replace('\n', Markup('<br />'))
+
+def static_url(file):
+    try:
+        url = staticfiles_storage.url(file)
+    except:
+        url = file
+    return url
+
+%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%block name="header"></%block>
+    </title>
+</head>
+<body>
+
+<%block name="body"></%block>
+
+</body>
+</html>
