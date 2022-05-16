@@ -9,7 +9,7 @@ DROP_DOWNS = """
           "choice_1": {
             "color": "BFEFDF",
             "correct": true,
-            "feedback": "We can roll with that",
+            "feedback": "We can roll with that.",
             "font_color": "292C2E",
             "text": "Good"
           },
@@ -36,21 +36,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Average"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Above Average"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Best"
           }
         }
       },
@@ -61,21 +61,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Low"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Lower"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Lowest"
           }
         }
       },
@@ -93,14 +93,14 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Better"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Best"
           }
         }
       }
@@ -122,21 +122,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Bad"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Worse"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Worst"
           }
         }
       },
@@ -147,21 +147,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Cool"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Cooler"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Coolest"
           }
         }
       },
@@ -172,21 +172,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Sunday"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Monday"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Tuesday"
           }
         }
       },
@@ -197,21 +197,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Pakistan"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Philippine"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Peru"
           }
         }
       }
@@ -233,21 +233,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Australia"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "England"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "West Indies"
           }
         }
       },
@@ -258,21 +258,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "1990"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "1992"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "1994"
           }
         }
       },
@@ -283,21 +283,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "2000"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "2010"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "2020"
           }
         }
       },
@@ -308,21 +308,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Think"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Thought"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Thank you"
           }
         }
       }
@@ -344,21 +344,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "William"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Paul"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Berk"
           }
         }
       },
@@ -369,21 +369,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Light"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Tough"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Easy"
           }
         }
       },
@@ -394,21 +394,21 @@ DROP_DOWNS = """
             "correct": true,
             "feedback": "We can roll with that",
             "font_color": "292C2E",
-            "text": "Good"
+            "text": "Winter"
           },
           "choice_2": {
             "color": "FFD7B3",
             "correct": true,
             "feedback": "You should think Again",
             "font_color": "292C2E",
-            "text": "Normal"
+            "text": "Summer"
           },
           "choice_3": {
             "color": "F5C7C8",
             "correct": true,
             "feedback": "Not a good practice though",
             "font_color": "292C2E",
-            "text": "Bad"
+            "text": "Spring"
           }
         }
       },
