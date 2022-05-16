@@ -1,0 +1,30 @@
+
+<%!
+from django.contrib.staticfiles.storage import staticfiles_storage
+
+def static_url(file):
+    try:
+        url = staticfiles_storage.url(file)
+    except:
+        url = file
+    return url
+
+%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>
+        <%block name="title">Main Title</%block>
+    </title>
+     <link href="${static_url('style.css')}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <%block name="body_content">
+        Content from the Parent container
+    </%block>
+
+</body>
+</html>
