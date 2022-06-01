@@ -9,9 +9,7 @@ jobs:
       uses: emzubair/python-pylint@main
       with:
         source: "dj_mako"
-        strict: "low"
-        mypy-options: ""
+        strict: "high"
         pylint-options: ""
-        black-options: ""
         isort-options: "-w 100"
         django: true
