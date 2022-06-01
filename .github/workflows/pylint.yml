@@ -38,7 +38,7 @@ jobs:
         pip install pylint
     - name: Creating pylint report
       id: pylint-report
-      continue-on-error: false
+      continue-on-error: true
       run: |
         pylint ${{ env.GIT_DIFF }} 2>&1 | tee report_pylint.txt
         
