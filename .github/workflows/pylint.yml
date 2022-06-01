@@ -52,7 +52,7 @@ jobs:
       if: env.GIT_DIFF
 
     - name: Post report on PR
-      uses: mshick/add-pr-comment@v1
+    - uses: mshick/add-pr-comment@v1
       with:
         message: |
           **pylint:** ${{ steps.pylint-report.outputs.icon }}
