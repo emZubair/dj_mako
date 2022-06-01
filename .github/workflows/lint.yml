@@ -1,0 +1,15 @@
+name: Lint Workflow
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Python Linter
+      uses: emzubair/python-pylint@main
+      with:
+        source: "dj_mako"
+        strict: "high"
+        pylint-options: ""
+        isort-options: "-w 100"
+        django: true
