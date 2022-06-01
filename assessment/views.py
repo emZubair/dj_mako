@@ -8,7 +8,7 @@ class ClassBasedView(TemplateView):
     template_name = "home.html"
 
     def get_context_data(self, **kwargs):
-        context = super(ClassBasedView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
         context.update({
             'items': [
@@ -22,4 +22,3 @@ class ClassBasedView(TemplateView):
         })
 
         return context
-
