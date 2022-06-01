@@ -40,7 +40,7 @@ jobs:
       id: pylint-report
       continue-on-error: true
       run: |
-        pylint ${{ env.GIT_DIFF }} 2>&1 | tee report_pylint.txt
+        pylint --fail-under=8 ${{ env.GIT_DIFF }} 2>&1 | tee report_pylint.txt
         
         body=$(cat report_pylint.txt)
         body="${body//'%'/'%25'}"
