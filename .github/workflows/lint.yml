@@ -9,7 +9,7 @@ jobs:
       uses: sunnysid3up/python-linter@master
       with:
         source: "dj_mako"
-        strict: "medium"
+        strict: "low"
         mypy-options: ""
         pylint-options: ""
         black-options: ""
