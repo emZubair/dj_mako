@@ -51,15 +51,3 @@ jobs:
         echo ::set-output name=body::$body
       if: env.GIT_DIFF
 
-    - name: Post report on PR
-    - uses: mshick/add-pr-comment@v1
-      with:
-        message: |
-          **pylint:** ${{ steps.pylint-report.outputs.icon }}
-          ${{ steps.pylint-report.outputs.title }}
-          ```
-          ${{ steps.pylint-report.outputs.score }}${{ steps.pylint-report.outputs.body }}
-          ```
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: 'github-actions[bot]'
-      if: env.GIT_DIFF
