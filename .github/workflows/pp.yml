@@ -1,21 +1,23 @@
-on: pull_request
-
-permissions:
-  contents: write
-  pull-requests: write
-
+name: My Workflow
+on: [push, pull_request]
 jobs:
-  example:
+  build:
     runs-on: ubuntu-latest
-    name: Executes pylint
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      - uses: actions/checkout@master
 
-      - name: Lint
-        uses: gabriel-milan/action-pylint@v1
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
         with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # GitHub token
-          path: "./*.py" # Glob pattern for files to lint
-          fail: true # Fail the action if pylint errors are found
-          pr-message: true # Send a PR message if pylint errors are found
+          python-version: "3.8"
+        
+      - name: Install pylint
+        run: |
+          pip install pylint
+
+      - name: Add pylint annotator
+        uses: jpy-git/pylint-pr-annotator@master
+
+      - name: Run pylint
+        run: |
+          pylint dj_mako/
