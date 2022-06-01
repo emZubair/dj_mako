@@ -1,4 +1,4 @@
-name: My Workflow
+name: Lint Workflow
 on: [push, pull_request]
 jobs:
   build:
@@ -10,5 +10,8 @@ jobs:
       with:
         source: "dj_mako"
         strict: "medium"
+        mypy-options: ""
+        pylint-options: ""
+        black-options: ""
         isort-options: "-w 100"
         django: true
