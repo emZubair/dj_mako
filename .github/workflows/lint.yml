@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Python Linter
-      uses: emzubair/python-pylint@master
+      uses: emzubair/python-pylint@main
       with:
         source: "dj_mako"
         strict: "low"
