@@ -604,4 +604,3 @@ HEADERS = """
 
 def escape_html(text):
     return text.replace('\n', Markup('<br />'))
-
