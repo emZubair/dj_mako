@@ -73,8 +73,8 @@ jobs:
     - name: Check Pylint Score
       run: |
         echo "Failed"
-        echo ${{steps.pylint-report.outputs.score}}
-        echo ${{steps.pylint-report.outputs.score < 4}}
+        echo "score ${{steps.pylint-report.outputs.score}}"
+        echo " is less ${{steps.pylint-report.outputs.score < 4}}"
         exit 1
       
 
