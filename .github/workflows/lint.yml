@@ -28,6 +28,7 @@ jobs:
           !**/envs/*
           !common/**/etree.py
         DOT: '...'
+        THRESHOLD: 4
         DIFF_FILTER: 'AMRC'
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
@@ -70,7 +71,7 @@ jobs:
       if: env.GIT_DIFF
 
     - name: Check Pylint Score
-      if: steps.pylint-report.outputs.score <= 4
+      if: $((steps.pylint-report.outputs.score)) <= $((env.THRESHOLD))
       uses: actions/github-script@v3
       with:
         script: |
