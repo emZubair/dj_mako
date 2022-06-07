@@ -71,7 +71,7 @@ jobs:
       if: env.GIT_DIFF
 
     - name: Check Pylint Score
-      if: $((steps.pylint-report.outputs.score)) <= $((env.THRESHOLD))
+      if: ${{steps.pylint-report.outputs.score}} <= ${{env.THRESHOLD}}
       uses: actions/github-script@v3
       with:
         script: |
