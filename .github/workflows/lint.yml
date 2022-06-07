@@ -70,7 +70,7 @@ jobs:
       if: env.GIT_DIFF
 
     - name: Check Pylint Score
-      if: ${{ steps.pylint-report.outputs.score }} <= 9
+      if: ${{ steps.pylint-report.outputs.score }} <= 4
       uses: actions/github-script@v3
       with:
         script: |
