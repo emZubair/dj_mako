@@ -71,8 +71,9 @@ jobs:
       if: env.GIT_DIFF
 
     - name: Check Pylint Score
+      run: |
+        echo "Failed"
+        exit 1
+      
+
       if: steps.pylint-report.outputs.score < 4
-      uses: actions/github-script@v3
-      with:
-        script: |
-          core.setFailed('Score is less')
