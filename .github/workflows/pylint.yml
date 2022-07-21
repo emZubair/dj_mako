@@ -26,3 +26,15 @@ jobs:
     - name: Analysing the code with pylint
       run: |
          pylint dj_mako
+
+    - name: Lint with pylint
+      working-directory: ./
+      run: |
+          echo  '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
+          pip install -r requirements.txt
+          OUTPUT = $(pylint ${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}  --exit-zero --jobs=0)
+          SCORE=$SCORE
+          echo "Pylint finished with score: $SCORE"
+          echo 'MESSAGE<<EOF' >> $GITHUB_ENV
+          echo  "$OUTPUT"  >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
