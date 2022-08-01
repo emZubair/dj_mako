@@ -75,10 +75,19 @@ jobs:
         repo-token-user-login: 'github-actions[bot]'
       if: env.GIT_DIFF
 
+    - name: No py file, post comment on PR
+      uses: mshick/add-pr-comment@v1
+      with:
+        message: |
+            No python file in PR. **Looks good** :+1:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token-user-login: 'github-actions[bot]'
+      if: env.GIT_DIFF == ''
+
     - name: A/B Check
 
       uses: actions/github-script@v3
       with:
         script: |
           core.setFailed('boom!')
-      if: ${{ steps.pylint-report.outputs.value != 10 }}
+      if: ${{ env.GIT_DIFF != '' && steps.pylint-report.outputs.value != 10 }}

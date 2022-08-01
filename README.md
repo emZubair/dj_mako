@@ -2,7 +2,7 @@
 This is demo project to demonstrate working of MAKO templates in Django.
 
 #### Setup 
-To setup the project locally, clone the repo by typing.
+To setup the project locally, clone the repo by typing. :point_down:
 ```commandline
 # create and activate a virtual environment with python >= 3.8.0
 
@@ -10,7 +10,7 @@ git clone git@github.com:emZubair/dj_mako.git
 
 # Install the requirements
 pip install -r requirements.txt
-# run the migrations
+# run the migrations :point_down:
 python manage.py migrate
 ```
 
