@@ -2,25 +2,25 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
+# Define a job to be invoked later in a workflow. 22.06-rc-git, rc-git
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+  build:
+    working_directory: ~/dj_mako
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+      - image: docker:22.06-rc-git
     steps:
       - checkout
+      - setup_remote_docker
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: Install Dependencies
+          command: |
+            apk add --no-cache py-pip>=19.0
+            pip install docker-compose==1.29.2
+      - run:
+          name: Run Tests
+          command: |
+            env DOCKER_BUILDKIT=0 docker-compose up -d
+            env DOCKER_BUILDKIT=0 docker-compose run app pytest
+            
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
