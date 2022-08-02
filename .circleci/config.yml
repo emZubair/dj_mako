@@ -6,7 +6,8 @@ version: 2.1
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build:
-    working_directory: ~/dj_mako
+    environment:
+      DJANGO_SETTIONS_MODULE: dj_mako.settings
     docker:
       - image: docker:22.06-rc-git
     steps:
@@ -21,6 +22,6 @@ jobs:
           name: Run Tests
           command: |
             env DOCKER_BUILDKIT=0 docker-compose up -d
-            env DOCKER_BUILDKIT=0 docker-compose run app pytest
+            env DOCKER_BUILDKIT=1 docker-compose run app pytest
             
 
