@@ -34,13 +34,20 @@ jobs:
       with:
         python-version: 3.8
 
+    - name: Cache python requirements
+      uses: actions/cache@v2
+      id: cache-python-requirements
+      with:
+        path: /opt/hostedtoolcache/Python/
+        key: |
+            ${{ hashFiles('requirements.txt') }}
+      if: env.GIT_DIFF
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Get current date
-      id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      if: env.GIT_DIFF && steps.cache-python-requirements.outputs.cache-hit != 'true'
 
     - name: Creating pylint report
       id: pylint-report
@@ -75,10 +82,19 @@ jobs:
         repo-token-user-login: 'github-actions[bot]'
       if: env.GIT_DIFF
 
+    - name: No py file, post comment on PR
+      uses: mshick/add-pr-comment@v1
+      with:
+        message: |
+            No python file in PR. **Looks good** :+1:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token-user-login: 'github-actions[bot]'
+      if: env.GIT_DIFF == ''
+
     - name: A/B Check
 
       uses: actions/github-script@v3
       with:
         script: |
           core.setFailed('boom!')
-      if: ${{ steps.pylint-report.outputs.value != 10 }}
+      if: ${{ env.GIT_DIFF != '' && steps.pylint-report.outputs.value != 10 }}
