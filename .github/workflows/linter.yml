@@ -49,15 +49,6 @@ jobs:
         pip install -r requirements.txt
       if: env.GIT_DIFF && steps.cache-python-requirements.outputs.cache-hit != 'true'
 
-    - name: Using Cache
-      uses: mshick/add-pr-comment@v1
-      with:
-        message: |
-            Using cache, no changes in Requirements **Looks good** :+1:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: 'github-actions[bot]'
-      if: env.GIT_DIFF && steps.cache-python-requirements.outputs.cache-hit == 'true'
-
     - name: Creating pylint report
       id: pylint-report
       continue-on-error: true
