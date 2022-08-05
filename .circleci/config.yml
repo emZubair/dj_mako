@@ -7,7 +7,7 @@ version: 2.1
 jobs:
   build:
     environment:
-      DJANGO_SETTIONS_MODULE: dj_mako.settings
+      DJANGO_SETTINGS_MODULE: dj_mako.settings
     docker:
       - image: docker:22.06-rc-git
     steps:
