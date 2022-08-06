@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    image: dj_mako:local
     command: >
       sh -c "python manage.py makemigrations &&
              python manage.py migrate &&
