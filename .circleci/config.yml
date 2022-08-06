@@ -5,6 +5,7 @@ jobs:
       - image: circleci/python:3.9
     steps:
       - checkout
+      - setup_remote_docker
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
       - run:
@@ -24,3 +25,12 @@ jobs:
       - store_artifacts:
           path: test-reports/
           destination: dj_mako
+
+      - deploy:
+          name: publish image to Docker HUB
+          command: |
+            docker-compose build
+            echo $DOCKER_HUB_USER_ID
+            docker login -u=$DOCKER_HUB_USER_ID -p=$DOCKER_HUB_PWD
+            docker tag dj_mako $DOCKER_HUB_USER_ID/dj_mako:latest
+            docker push dj_mako:latest
