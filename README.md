@@ -3,7 +3,7 @@
 This is demo project to demonstrate working of MAKO templates in Django.
 
 #### Setup 
-To setup the project locally, clone the repo by typing. :point_down:
+To set up the project locally, clone the repo by typing :point_down:
 ```commandline
 # create and activate a virtual environment with python >= 3.8.0
 
