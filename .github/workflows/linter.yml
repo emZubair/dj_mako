@@ -69,6 +69,25 @@ jobs:
         echo ::set-output name=body::$body
       if: env.GIT_DIFF
 
+    - name: Creating iSort report
+      id: isort-report
+      continue-on-error: true
+      run: |
+        isort ${{ env.GIT_DIFF }} -c 2>&1 | tee report_isort.txt
+        sed -i 's#/home/runner/work/dj_mako/dj_mako##g' report_isort.txt
+
+        body=$(cat report_isort.txt)
+        body="${body//'%'/'%25'}"
+        body="${body//$'\n'/'%0A'}"
+        body="${body//$'\r'/'%0D'}"
+
+        echo ::set-output name=icon::":x:"
+        title="**Please fix following iSort issues:**"
+        [[ ${#body} == 0 ]] && echo ::set-output name=icon::":heavy_check_mark:" && \
+        echo ::set-output name=status::success || (body="\`\`\` %0A $body %0A \`\`\`" \
+        && echo ::set-output name=title::$title && echo ::set-output name=body::$body)
+      if: env.GIT_DIFF
+
     - name: Post report on PR
       uses: mshick/add-pr-comment@v1
       with:

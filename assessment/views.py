@@ -1,7 +1,6 @@
 from json import loads
-from django.views.generic import TemplateView
-
 from .utils import HEADERS, DROP_DOWNS
+from django.views.generic import TemplateView
 
 
 class ClassBasedView(TemplateView):
