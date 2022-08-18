@@ -93,10 +93,15 @@ jobs:
       with:
         message: |
           **pylint:** ${{ steps.pylint-report.outputs.icon }}
+          **iSort:** ${{ steps.isort-report.outputs.icon }}
+
           ${{ steps.pylint-report.outputs.title }}
           ```
           ${{ steps.pylint-report.outputs.score }}${{ steps.pylint-report.outputs.body }}
           ```
+          
+          ${{ steps.isort-report.outputs.title }}
+          ${{ steps.isort-report.outputs.body }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         repo-token-user-login: 'github-actions[bot]'
       if: env.GIT_DIFF
